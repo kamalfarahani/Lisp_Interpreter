@@ -14,7 +14,8 @@ public class If implements Expression {
 	
 	@Override
 	public SelfEvaluating eval(Environment env) {
-		if (predicate.eval(env) != null) {
+		final LispBool condition = (LispBool)predicate.eval(env);
+		if (condition.value) {
 			return this.consequent.eval(env);
 		} else {
 			return this.alternative.eval(env);
