@@ -9,7 +9,7 @@ public class Parser {
 
 	public static RawExpression parse(final List<String> exprList) {
 		if (!exprList.get(0).equals("(")) {
-			return new RawExpression(exprList.get(0), new RawExpression[0]);
+			return new RawExpression(exprList.get(0), null);
 		}
 		
 		final ArrayList<ArrayList<String>> listOfExprLists = 

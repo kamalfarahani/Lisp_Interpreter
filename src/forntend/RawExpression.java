@@ -10,8 +10,10 @@ public class RawExpression {
 	}
 	
 	public String toString() {
-		if (this.expressions.length == 0) {
+		if (this.expressions == null) {
 			return this.word;
+		} else if (this.expressions.length == 0) {
+			return "(" + this.word + ")";
 		} else {
 			String expsStr = "";
 			for (int i = 0; i < this.expressions.length; i++) {
