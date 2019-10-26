@@ -64,7 +64,7 @@ public class RawExpressionTranslator {
 		
 		params[0] = translateVariable(rawExpression.expressions[0]);
 		for (int i = 1; i < params.length; i++) {
-			params[i] = translateVariable(rawExpression.expressions[0].expressions[i]);
+			params[i] = translateVariable(rawExpression.expressions[0].expressions[i - 1]);
 		}
 		
 		for (int i = 0; i < body.length; i++) {
