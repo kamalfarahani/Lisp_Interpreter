@@ -6,6 +6,7 @@ import java.util.HashMap;
 
 import backend.Add;
 import backend.Environment;
+import backend.Equal;
 import backend.Multiply;
 import backend.SelfEvaluating;
 import backend.Variable;
@@ -46,8 +47,10 @@ public class Main {
 		final Variable[] vars = new Variable[] { new Variable("x"), new Variable("y") };
 		final Add add = new Add(vars , null, env);
 		final Multiply multiply = new Multiply(vars, null, env);
+		final Equal equal = new Equal(vars, null, env);
 		
 		env.addMut(new Variable("+"), add);
 		env.addMut(new Variable("*"), multiply);
+		env.addMut(new Variable("="), equal);
 	}
 }
