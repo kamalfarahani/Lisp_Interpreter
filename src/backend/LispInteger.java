@@ -1,7 +1,7 @@
 package backend;
 
 
-public class LispInteger implements Addable, Mulable {
+public class LispInteger implements Addable, Mulable, Equalable {
 	public final Integer value;
 	
 	public LispInteger(final Integer value) {
@@ -25,6 +25,13 @@ public class LispInteger implements Addable, Mulable {
 	@Override
 	public LispInteger multiply(Mulable other) {
 		return new LispInteger(this.value * ((LispInteger)other).value);
+	}
+
+	@Override
+	public LispBool isEqual(Equalable other) {
+		final LispInteger otherLispInteger = (LispInteger) other;
+		
+		return new LispBool(this.value == otherLispInteger.value);
 	}
 
 }
